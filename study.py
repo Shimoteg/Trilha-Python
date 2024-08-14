@@ -51,5 +51,8 @@ print("2 * 15 = ", multiplicacao)
 divisao = 9 / 3
 print("9 / 3 = ", divisao)
 print("Tipo da variavel da divisao = ", type(divisao))
-#Para transformar o resultado em inteiro, pois a divisao resulta em float
+#Para transformar o resultado em inteiro, pois a divisao resulta em float 
 print("Tipo da variavel da divisao int = ", int(divisao))
+
+# % Modulo resulta no resto da divisão
+print("Ao dividir 10 por 3 resta = ", 10 % 3)
