@@ -45,3 +45,5 @@ print("Item do dicionário[3]: ",chaves[3])
 valores = list(pessoa.items())
 print("Item do dicionário: %s = %s" % (valores[2][0], valores[2][1]))
 
+
+

@@ -1,7 +1,13 @@
 #if elif and else
 
 #if example
-idade = 19
+idade = int(input("Digite sua idade: "))
+
+""" 
+Tambem e possivel tranformar o resultado em um valor inteiro
+idade = int(idade)
+"""
+
 #Maior que
 print("Exemplo de comando if")
 if idade >= 18:

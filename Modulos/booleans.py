@@ -2,7 +2,7 @@ dog = "Fumeica"
 
 dogTwo = "Faisca" 
 
-vdd = True
+vdd = False
 
 if vdd == True:
     print(dog)
