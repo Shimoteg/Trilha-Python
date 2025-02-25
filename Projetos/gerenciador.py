@@ -1,3 +1,4 @@
+
 def adicionar_tarefa(tarefas, nome_tarefa):
 #Tarefa: nome da tarefa
     tarefa = {"tarefa": nome_tarefa, "completada": False}
@@ -37,7 +38,10 @@ def deletar_tarefas_completadas(tarefas):
     return
 
 tarefas = []
+
+
 while True:
+   
     print("\nMenu do Gerenciador de Tarefas")
     print("1. Adicionar Tarefa")
     print("2. Ver Tarefas")
