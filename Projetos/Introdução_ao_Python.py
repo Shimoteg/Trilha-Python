@@ -1,11 +1,11 @@
 
-contatos = []
+contatos = [] #Lista de contatos inicia vazia#
 def adicionar_contato(contatos):
     nome_contato = input("Digite o nome do Contato:")
     telefone = input("Digite o telefone do Contato:")
     email = input("Digite o email do Contato:")
     contato = {"Nome": nome_contato, "Favorito": False, "Telefone": telefone, "Email": email}
-    contatos.append(contato)
+    contatos.append(contato) #Adiciona o contato na lista de contatos#
     print(f"Contato {nome_contato} adicionado com sucesso!")
 
 def ver_contatos(contatos):
