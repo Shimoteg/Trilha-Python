@@ -1,3 +1,5 @@
+import random #importanto biblioteca para adcionar aleatoriedade
+
 #Personagem: classe mae (tudo que e comum entre os personagems)
 #Heroi: heranca de personagem (controlado pelo usuario)
 #Vilao: adversario do usuario.
@@ -26,7 +28,7 @@ class Personagem:
             self.__vida = 0  
 
     def atacar(self, alvo):
-        dano = self.__nivel * 2
+        dano = random.randint(self.get_nivel() * 2, self.get_nivel() * 5) #baseado no nivel
         alvo.receber_dano(dano) #Puxa o alvo para receber o dano (se esta atacando nao ira perder vida)
         print(f"{self.get_nome()} atacou {alvo.get_nome()} com {dano} de dano!")
 
@@ -44,9 +46,9 @@ class Heroi(Personagem):
         return f"{super().exibir_detalhes()}\nHabilidade: {self.get_habilidade()}"
     
     def ataque_especial(self, alvo):
-        dano = self.__nivel * 5
+        dano = random.randint(self.get_nivel() * 5, self.get_nivel() * 8) #Dano aumentado
         alvo.receber_dano(dano)
-        print(f"{self.get_nome()} usou a habilidade especial e atacou {alvo.get_nome()} com {dano} de dano!")
+        print(f"{self.get_nome()} usou a habilidade especial {self.get_habilidade()} com {dano} de dano em {alvo.get_nome()}")
 
 #Objeto do Inimigo 
 class Vilao(Personagem):
@@ -63,7 +65,7 @@ class Jogo:
     """Classe orquestradora do jogo"""
     def __init__(self):
         self.heroi = Heroi("Heroi", vida=100, nivel=5, habilidade="Destruição de mundos\n")
-        self.inimigo = Vilao("Arauto do luto", 130, 10, "Desconhecido\n") 
+        self.inimigo = Vilao("Arauto do luto", 120, 7, "Desconhecido\n") 
 
     def iniciar_batalha(self):
         """ Fazer a gestao da batalha em turnos"""
@@ -78,11 +80,14 @@ class Jogo:
 
             if escolha == "1":
                 self.heroi.atacar(self.inimigo)
+            elif escolha == "2":
+                self.heroi.ataque_especial(self.inimigo)
             else:
                 print("Opcao invalida. Tente novamente.")
 
             if self.inimigo.get_vida() > 0:
                 self.inimigo.atacar(self.heroi)
+            
 
         if self.heroi.get_vida() > 0:
             print("Parabens, voce venceu a batalha!")
